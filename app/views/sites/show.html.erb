@@ -1,0 +1,6 @@
+<%= @site.name %>
+<br>
+<br>
+
+<%= link_to "Editar", edit_site_path(@site) %>
+<%= link_to "Deletar", site_path(@site), method: :delete, data: { confirm: 'Tem Certeza?' } %>

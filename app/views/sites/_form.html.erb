@@ -1,0 +1,74 @@
+<%= form_for @site do |f| %>
+  <% if @site.errors.any? %>
+    <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved: </h2>
+    <ul>
+      <% @site.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+
+  <br>
+  <br>
+
+  <%= f.label :link %><br>
+  <%= f.text_field :link %>
+
+  <br>
+  <br>
+
+  <%= f.label :logo %><br>
+  <%= f.text_field :logo %>
+
+  <br>
+  <br>
+
+  <%= f.label :description %><br>
+  <%= f.text_field :description %>
+
+  <br>
+  <br>
+
+  <%= f.label :status %><br>
+  <%= f.text_field :status %>
+
+  <br>
+  <br>
+
+  <%= f.label :product_link_tag %><br>
+  <%= f.text_field :product_link_tag %>
+
+  <br>
+  <br>
+
+  <%= f.label :price_tag %><br>
+  <%= f.text_field :price_tag %>
+
+  <br>
+  <br>
+
+  <%= f.label :image_tag %><br>
+  <%= f.text_field :image_tag %>
+
+  <br>
+  <br>
+
+  <%= f.label :description_tag %><br>
+  <%= f.text_field :description_tag %>
+
+  <br>
+  <br>
+
+  <%= f.label :category_tag %><br>
+  <%= f.text_field :category_tag %>
+
+  <br>
+  <br>
+
+  <%= f.submit %>
+
+
+<% end %>  
