@@ -1,42 +1,52 @@
-<%= @site.name %>
-<br>
-<br>
+<div id="site_show_content" class="skinny_wrapper wrapper_padding">
+  <header>
+    <h1><%= @site.name %></h1>
+    <hr>
+  </header>
 
-<%= @site.link %>
-<br>
-<br>
+  <div id="content">
 
-<%= @site.logo %>
-<br>
-<br>
+    <%= @site.name %>
+    <br>
+    <br>
 
-<%= @site.description %>
-<br>
-<br>
+    <%= @site.link %>
+    <br>
+    <br>
 
-<%= @site.status %>
-<br>
-<br>
+    <%= @site.logo %>
+    <br>
+    <br>
 
-<%= @site.product_link_tag %>
-<br>
-<br>
+    <%= @site.description %>
+    <br>
+    <br>
 
-<%= @site.price_tag %>
-<br>
-<br>
+    <%= @site.status %>
+    <br>
+    <br>
 
-<%= @site.image_tag %>
-<br>
-<br>
+    <%= @site.product_link_tag %>
+    <br>
+    <br>
 
-<%= @site.description_tag %>
-<br>
-<br>
+    <%= @site.price_tag %>
+    <br>
+    <br>
 
-<%= @site.category_tag %>
-<br>
-<br>
+    <%= @site.image_tag %>
+    <br>
+    <br>
 
-<%= link_to "Editar", edit_site_path(@site) %>
-<%= link_to "Deletar", site_path(@site), method: :delete, data: { confirm: 'Tem Certeza?' } %>
+    <%= @site.description_tag %>
+    <br>
+    <br>
+
+    <%= @site.category_tag %>
+    <br>
+    <br>
+
+    <%= link_to "Editar", edit_site_path(@site) %>
+    <%= link_to "Deletar", site_path(@site), method: :delete, data: { confirm: 'Tem Certeza?' } %>
+  </div>  
+</div>

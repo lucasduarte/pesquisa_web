@@ -10,19 +10,21 @@
 </head>
 <body>
 <header id="main_navigation" class="clearfix">
-  <a href="#" class="name">Lucas Duarte</a>
+  <%= link_to "Pesquisa Web", root_path, class: "name" %>
   <nav>
     <a href="articles.html">Articles</a>
     <a href="#">Projects</a>
     <a href="#">Contact</a>
   </nav>
 </header>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+<div id="site_show_content" class="skinny_wrapper wrapper_padding">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+</div>
 
 <%= yield %>
 
