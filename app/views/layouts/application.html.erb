@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PesquisaWeb</title>
+  <title>Pesquisa Web</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header id="main_navigation" class="clearfix">
+  <a href="#" class="name">Lucas Duarte</a>
+  <nav>
+    <a href="articles.html">Articles</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
