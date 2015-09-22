@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
 
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_site, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -44,7 +44,7 @@ class SitesController < ApplicationController
     params.require(:site).permit(:name, :link, :logo, :description, :category_id, :product_link_tag, :price_tag, :image_tag, :description_tag, :category_tag, :status)
   end
 
-  def find_post
+  def find_site
     @site = Site.find(params[:id])
   end
 end

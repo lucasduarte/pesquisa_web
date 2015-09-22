@@ -11,10 +11,18 @@
 <body>
   <header id="main_navigation" class="clearfix">
     <%= link_to "Pesquisa Web", root_path, class: "name" %>
-    <nav>
-      <a href="articles.html">Articles</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
+    <nav id="primary_nav_wrap">
+      <ul>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="#">Projects</a></li>
+        <li>
+          <a href="#">Conta</a>
+          <ul>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   </header>
   <div id="site_show_content" class="skinny_wrapper wrapper_padding">
@@ -36,5 +44,8 @@
         <a href="#"><i class="fa fa-instagram"></i></a>
       </nav>  
   </footer>
+  <script type="text/javascript">
+      <%= yield :js %>
+  </script>
 </body>
 </html>

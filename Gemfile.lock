@@ -50,7 +50,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.8.0)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -155,6 +155,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   x86-mingw32
@@ -163,6 +164,7 @@ DEPENDENCIES
   ajax-datatables-rails
   byebug
   coffee-rails (~> 4.1.0)
+  coffee-script-source (= 1.8.0)
   devise
   jbuilder (~> 2.0)
   jquery-datatables-rails
@@ -175,3 +177,4 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate (~> 3.0.6)
