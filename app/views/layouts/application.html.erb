@@ -2,31 +2,39 @@
 <html>
 <head>
   <title>Pesquisa Web</title>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header id="main_navigation" class="clearfix">
-  <%= link_to "Pesquisa Web", root_path, class: "name" %>
-  <nav>
-    <a href="articles.html">Articles</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-<div id="site_show_content" class="skinny_wrapper wrapper_padding">
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-</div>
+  <header id="main_navigation" class="clearfix">
+    <%= link_to "Pesquisa Web", root_path, class: "name" %>
+    <nav>
+      <a href="articles.html">Articles</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <div id="site_show_content" class="skinny_wrapper wrapper_padding">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  </div>
 
-<%= yield %>
+  <%= yield %>
 
+  <footer id="main_footer">
+      <p class="copyright">&copy;Teste</p>
+      <nav>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </nav>  
+  </footer>
 </body>
 </html>
