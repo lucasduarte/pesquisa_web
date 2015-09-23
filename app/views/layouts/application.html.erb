@@ -13,15 +13,22 @@
     <%= link_to "Pesquisa Web", root_path, class: "name" %>
     <nav id="primary_nav_wrap">
       <ul>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="#">Projects</a></li>
-        <li>
-          <a href="#">Conta</a>
-          <ul>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Configurações</a></li>
-          </ul>
-        </li>
+        <li><a href="articles.html">Alertas</a></li>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to 'Administração', rails_admin_path %></li>
+          <% end %>  
+          <li>
+            <a href="#">Conta</a>
+            <ul>
+              <li><a href="#"><%= gravatar_for(current_user)%>Perfil</a></li>
+              <li><%= link_to 'Configurações', edit_user_registration_path %></li>
+              <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete%></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>    
       </ul>
     </nav>
   </header>

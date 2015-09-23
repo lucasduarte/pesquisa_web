@@ -16,11 +16,9 @@ $transparency: rgba(0, 0, 0, 0.075);
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: transparent;
 }
 
-.wrapper {
-  padding-top: 150px;
+.wrapper {  
   width: 90%;
   margin: 0 auto;
 }
@@ -32,7 +30,7 @@ body {
 }
 
 .wrapper_padding {
-  padding: 1.2rem 0;
+  padding: 3.5rem 0;
 }
 
 .clearfix:before,
@@ -89,6 +87,12 @@ p, li {
 
 p, ul, ol {
   margin: 0 0 1.6em 0;
+}
+
+.gravatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 #main_navigation {

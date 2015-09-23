@@ -29,7 +29,12 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'puma'
 
 gem 'jquery-datatables-rails'
+
 gem 'ajax-datatables-rails'
+
+gem "rails_admin"
+
+gem "formtastic"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
