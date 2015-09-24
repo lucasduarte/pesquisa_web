@@ -89,9 +89,15 @@ p, ul, ol {
   margin: 0 0 1.6em 0;
 }
 
-.gravatar {
+.gravatar-small {
   width: 25px;
   height: 25px;
+  margin-right: 5px;
+}
+
+.gravatar-big {
+  width: 100px;
+  height: 100px;
   margin-right: 5px;
 }
 

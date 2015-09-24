@@ -1,0 +1,46 @@
+.productImg {
+  width: 100px;
+  height: 100px;
+}
+
+.site-logo {
+  width: 50px;
+  height: 50px;
+
+}
+
+.col-small, .col-big {
+  float: left;
+}
+
+.col-small {
+  width: 30%;
+  padding: 0 5% 0 2.5%;
+}
+
+.col-big {
+  width: 65%;
+  padding: 0 2.5%;
+}
+
+.filter-container {
+    display:block;
+    margin-right:1em;
+    font-weight: 700;
+    color: $dark
+}
+
+#price {
+  width: 60%;
+  height: 3em;
+}
+
+th, td { 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-align: center;
+}
+
+img.raty-cancel {
+  display: none;
+}

@@ -21,7 +21,7 @@
           <li>
             <a href="#">Conta</a>
             <ul>
-              <li><a href="#"><%= gravatar_for(current_user)%>Perfil</a></li>
+              <li><%= link_to gravatar_for(current_user, 'gravatar-small') + 'Perfil', user_profile_path %></li>
               <li><%= link_to 'Configurações', edit_user_registration_path %></li>
               <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete%></li>
             </ul>

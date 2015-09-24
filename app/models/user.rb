@@ -7,7 +7,4 @@ class User < ActiveRecord::Base
   has_many :alert       
   ratyrate_rater
 
-  def name
-    self.email
-  end
 end
