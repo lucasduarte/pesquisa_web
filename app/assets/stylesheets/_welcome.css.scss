@@ -52,3 +52,27 @@
       text-decoration: none;
     }
   }
+
+#search_content {
+  header {
+    text-align: center;
+    .date {
+      font-size: .9em;
+      color: $light;
+      margin: 0;
+    }
+    h1 {
+      margin: 0;
+    }
+  }
+  hr {
+      margin: 3em auto;
+  }
+}
+
+#search_word {
+  width: 90%;
+  height: 54.2px;
+  margin-right: -5px;
+  margin-left: 5px;
+}

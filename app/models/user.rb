@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :alert       
+  ratyrate_rater
+
+  def name
+    self.email
+  end
 end

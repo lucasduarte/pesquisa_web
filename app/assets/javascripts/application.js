@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.responsive
+//= require dataTables/extras/dataTables.fixedHeader
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .
 
 

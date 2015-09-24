@@ -14,7 +14,7 @@ gem 'coffee-script-source', '1.8.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.0.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -28,13 +28,21 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'puma'
 
-gem 'jquery-datatables-rails'
+#gem 'jquery-datatables-rails', '~> 3.3.0'
 
-gem 'ajax-datatables-rails'
+gem 'jquery-datatables-rails'
 
 gem "rails_admin"
 
 gem "formtastic"
+
+gem 'mechanize'
+
+#Scheduled jobs gem
+gem "rufus-scheduler", "~> 2.0.0"
+gem 'scheduler_daemon'
+
+gem 'ratyrate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

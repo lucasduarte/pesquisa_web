@@ -1,31 +1,75 @@
 <div class="wrapper">
-      <div class="medium_wrapper wrapper_padding clearfix">
-        <div class="col-1 about homepage_content">
-          <h2>About</h2>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div  class="col-2 homepage_content">
-          <h2>Stuff I've Written</h2>
-          <hr>
-          <h3><a href="#">The DO List</a></h3>
-          <P class="date">Friday April 10th</P>
-          <h3><a href="#">How do I learn "X"?</a></h3>
-          <P class="date">Friday April 10th</P>
-          <h3><a href="#">Strive for the uncomfortable</a></h3>
-          <P class="date">Friday April 10th</P>  
-        </div>
-        <div class="col-3 homepage_content">
-          <h2>Stuff I've Built</h2>
-          <hr>
-          <h3><a href="#">Unicasts</a></h3>
-          <P class="date">Friday April 10th</P>
-          <h3><a href="#">The Mackenzie</a></h3>
-          <P class="date">Friday April 10th</P>
-          <h3><a href="#">Strive for the uncomfortable</a></h3>
-          <P class="date">Friday April 10th</P>
-        </div>
-      </div>
+  <div id="search_content" class="medium_wrapper wrapper_padding clearfix">
+    <header><h1>Pesquisar Produto</h1></header>
+    <hr>
+
+    <br>
+    <br>
+
+    <div id="content">
+      <form action="#" method="get">
+        <input type="text" id="search_word" />
+        <button type="submit" value="" class="button">
+          <i class="fa fa-search"></i>        
+        </button>
+      </form>  
     </div>
+    
+    <br>
+    <br>
+    
+    <hr>
+  
+  </div>
+</div>
+<div class="wrapper">
+  <div class="medium_wrapper wrapper_padding clearfix">
+    <div class="col-1 about homepage_content">
+      <h2>Últimos Produtos Pesquisados</h2>
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div  class="col-2 homepage_content">
+      <h2>Mais Buscados</h2>
+      <hr>
+      <h3><a href="#">The DO List</a></h3>
+      <P class="date">Friday April 10th</P>
+      <h3><a href="#">How do I learn "X"?</a></h3>
+      <P class="date">Friday April 10th</P>
+      <h3><a href="#">Strive for the uncomfortable</a></h3>
+      <P class="date">Friday April 10th</P>  
+    </div>
+    <div class="col-3 homepage_content">
+      <h2>Maior Variação</h2>
+      <hr>
+      <h3><a href="#">Unicasts</a></h3>
+      <P class="date">Friday April 10th</P>
+      <h3><a href="#">The Mackenzie</a></h3>
+      <P class="date">Friday April 10th</P>
+      <h3><a href="#">Strive for the uncomfortable</a></h3>
+      <P class="date">Friday April 10th</P>
+    </div>
+  </div>
+</div>
+
+<% content_for :js do %>
+    /* Friendly URL rewrite */
+    $("form").submit(function() {
+        /* Remove unwanted characters, only accept alphanumeric and space */
+        var keyword = $('#search_word').val().replace(/[^A-Za-z0-9 ]/g,'');
+     
+        /* Replace multi spaces with a single space */
+        keyword = keyword.replace(/\s{2,}/g,' ');
+     
+        /* Replace space with a '-' symbol */
+        keyword = keyword.replace(/\s/g, "-");
+     
+        var cleanUrl = window.location.href + 'search/' + keyword.toLowerCase();
+        window.location = cleanUrl;
+     
+        return false;  // Prevent default button behaviour
+    });
+  
+<% end %>

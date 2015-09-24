@@ -43,16 +43,18 @@
 
   <%= yield %>
 
+  <script type="text/javascript">
+      <%= yield :js %>
+  </script>
+  
   <footer id="main_footer">
-      <p class="copyright">&copy;Teste</p>
+      <p class="copyright">&copy;Pesquisa Web</p>
       <nav>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-facebook-official"></i></a>
         <a href="#"><i class="fa fa-instagram"></i></a>
       </nav>  
   </footer>
-  <script type="text/javascript">
-      <%= yield :js %>
-  </script>
+  
 </body>
 </html>
