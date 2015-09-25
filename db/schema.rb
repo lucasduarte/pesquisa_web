@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923215828) do
+ActiveRecord::Schema.define(version: 20150925223443) do
 
   create_table "alerts", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -90,8 +90,9 @@ ActiveRecord::Schema.define(version: 20150923215828) do
 
   create_table "searches", force: :cascade do |t|
     t.string   "search_word", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "count",       limit: 4,   default: 1
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "sites", force: :cascade do |t|

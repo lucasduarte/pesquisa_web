@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   delete '/user/:id', to: 'users#destroy', as: 'destroy_user'
   get 'welcome/index'
   get '/profile', to: 'profiles#index', as: 'user_profile'
+  delete '/profile/:id', to: 'profiles#destroy', as: 'delete_user_profile'
   root 'welcome#index'
 end

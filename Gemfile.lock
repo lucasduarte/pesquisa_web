@@ -72,6 +72,7 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    hash-deep-merge (0.1.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -93,6 +94,9 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    lazy_high_charts (1.5.4)
+      bundler (>= 1.0)
+      hash-deep-merge
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -203,6 +207,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     tzinfo-data (1.2015.6)
@@ -235,6 +241,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-datatables-rails
   jquery-rails (= 4.0.4)
+  lazy_high_charts
   mechanize
   mysql2
   puma
@@ -245,6 +252,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   scheduler_daemon
   sdoc (~> 0.4.0)
+  toastr-rails
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

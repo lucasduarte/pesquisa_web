@@ -28,8 +28,6 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'puma'
 
-#gem 'jquery-datatables-rails', '~> 3.3.0'
-
 gem 'jquery-datatables-rails'
 
 gem "rails_admin"
@@ -42,7 +40,11 @@ gem 'mechanize'
 gem "rufus-scheduler", "~> 2.0.0"
 gem 'scheduler_daemon'
 
+gem 'lazy_high_charts'
+
 gem 'ratyrate'
+
+gem 'toastr-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

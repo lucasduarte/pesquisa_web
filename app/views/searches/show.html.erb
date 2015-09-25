@@ -24,8 +24,12 @@
       <div id="categories"></div>
     </div>
       
-    
     <div class="col-big">
+      <%= high_chart("price_history", @chart) do |c|%>
+        <%= raw "options.tooltip.formatter = function() {
+          return '<b>Preço</b>: R$'+ parseFloat(this.y).toFixed(2);
+        }" %>
+      <% end %>  
       <table id="resultado" class="display responsive no-wrap">
         <thead>
             <tr>
@@ -40,12 +44,12 @@
           <% @results.each do |r| %>
             <tr>
               <td><%= image_tag(r.image_link, :class => "productImg") %></td>
-              <td>
+              <td class="nowrap">
                 <%= image_tag(r.site.logo, :class => "site-logo") %>
                 <%= rating_for r.site, "id" , :disable_after_rate => false %>
               </td>
               <td style="display:none"><%= r.category %></td>
-              <td><%= r.description.first(75) + '...' %></td>
+              <td><%= link_to r.description.first(75) + '...', r.link, :target => '_blank' %></td>
               <td><%= currency_format(r.price) %></td>
             </tr>  
           <% end %>       

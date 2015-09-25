@@ -15,6 +15,7 @@
             <tr>
               <th>Pesquisa</th>
               <th>Preço</th>
+              <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
             <tr>
               <td><%= a.search_word %></td>
               <td><%= currency_format(a.price) %></td>
+              <td><%= link_to 'Deletar', delete_user_profile_path(a.id), :method => 'delete' %>
             </tr>  
           <% end %>       
         </tbody>
