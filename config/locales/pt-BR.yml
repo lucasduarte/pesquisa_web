@@ -1,4 +1,12 @@
 pt-BR:
+  activerecord:
+    models:
+      product: Produto
+      category: Categoria
+      search: Pesquisa
+      alert: Alerta
+      user: Usuario
+      rate: Avaliacao
   date:
     abbr_day_names:
     - Dom

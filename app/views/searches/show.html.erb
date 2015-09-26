@@ -9,7 +9,7 @@
         <%= form_tag(add_alert_path,  :id => 'add_alert', :method => 'get' ) do %>
           <%= hidden_field_tag 'search_word', @search_word %>
           <div class="input-group">
-            <input type="text" id="price" name="price" placeholder="R$ " onkeypress="return isNumberKey(event)"/>
+            <input type="text" id="price" name="price" placeholder="R$ " onkeypress="return isNumberKey(event)" required/>
             <span class="input-group-btn">
               <button type="submit" class="button">
                    <i class="fa fa-plus"></i>

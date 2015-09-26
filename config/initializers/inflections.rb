@@ -9,3 +9,11 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'produto', 'produtos'
+  inflect.irregular 'categoria', 'categorias'
+  inflect.irregular 'alerta', 'alertas'
+  inflect.irregular 'pesquisa', 'pesquisas'
+  inflect.irregular 'usuario', 'usuarios'
+end

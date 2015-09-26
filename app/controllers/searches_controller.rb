@@ -40,7 +40,7 @@ class SearchesController < ApplicationController
     category = params[:category]
 
     alert = Alert.create_alert user_id, search_word, category, price
-
+    flash[:success] = "Alerta salvo com sucesso!"
     redirect_to user_profile_path
   end
 end
