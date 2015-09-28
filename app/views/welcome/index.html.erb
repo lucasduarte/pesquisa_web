@@ -9,7 +9,7 @@
     <div id="content">
       <form action="#" method="get">
         <input type="text" id="search_word" required />
-        <button type="submit" value="" class="button">
+        <button type="submit" value="" class="button" id="search">
           <i class="fa fa-search"></i>        
         </button>
       </form>  
@@ -71,5 +71,15 @@
      
         return false;  // Prevent default button behaviour
     });
+
+     $(document).ready(function() { 
+        $('#search').click(function() { 
+            if(document.getElementById("search_word").value != "")
+            {
+              $.blockUI({ message: null }); 
+            }  
+        }); 
+    }); 
+ 
   
 <% end %>
