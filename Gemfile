@@ -38,7 +38,8 @@ gem 'mechanize'
 
 #Scheduled jobs gem
 gem "rufus-scheduler", "~> 2.0.0"
-#gem 'scheduler_daemon'
+
+gem 'scheduler_daemon'
 
 gem 'lazy_high_charts'
 
@@ -72,4 +73,4 @@ group :development, :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
