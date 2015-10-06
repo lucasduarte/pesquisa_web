@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
   def show
-    @search_word = params[:search_word]
+    @search_word = params[:search_word].downcase
     search = Search.find_by(search_word: @search_word)
 
     @results = nil
@@ -19,7 +19,7 @@ class SearchesController < ApplicationController
     dates = []
     prices = []
 
-    @price_history.each do |p|
+    @price_history.reverse.each do |p|
       dates <<  l(p.created_at, format: '%d %b')
       prices << p.price
     end
@@ -35,7 +35,7 @@ class SearchesController < ApplicationController
 
   def add_alert
     user_id = current_user.id
-    search_word = params[:search_word]
+    search_word = params[:search_word].downcase
     price = params[:price]
     category = params[:category]
 
