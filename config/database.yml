@@ -5,9 +5,14 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
+  enconding: utf8
+  database: pesquisa_web
   pool: 5
-  timeout: 5000
+  username: root
+  password: satan alado
+  host: localhost
+  port: 3306
 
 development:
   adapter: mysql2
@@ -15,7 +20,7 @@ development:
   database: pesquisa_web
   pool: 5
   username: root
-  password: root
+  password: satan alado
   host: localhost
   port: 3306
 
@@ -24,8 +29,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: pesquisa_web
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: pesquisa_web
