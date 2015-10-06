@@ -38,7 +38,7 @@ gem 'mechanize'
 
 #Scheduled jobs gem
 gem "rufus-scheduler", "~> 2.0.0"
-gem 'scheduler_daemon'
+#gem 'scheduler_daemon'
 
 gem 'lazy_high_charts'
 
