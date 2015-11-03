@@ -14,11 +14,11 @@
     <%= link_to "Pesquisa Web", root_path, class: "name" %>
     <nav id="primary_nav_wrap">
       <ul>
-        <li><a href="articles.html">Alertas</a></li>
+        <li><a href="/">Home</a></li>
         <% if user_signed_in? %>
           <% if current_user.admin? %>
             <li><%= link_to 'Administração', rails_admin_path %></li>
-          <% end %>  
+          <% end %>
           <li>
             <a href="#">Conta</a>
             <ul>
@@ -29,24 +29,24 @@
           </li>
         <% else %>
           <li><%= link_to 'Login', new_user_session_path %></li>
-        <% end %>    
+        <% end %>
       </ul>
     </nav>
   </header>
-  
+
   <%= yield %>
 
   <script type="text/javascript">
       <%= yield :js %>
   </script>
-  
+
   <footer id="main_footer">
       <p class="copyright">&copy;Pesquisa Web</p>
       <nav>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-facebook-official"></i></a>
         <a href="#"><i class="fa fa-instagram"></i></a>
-      </nav>  
+      </nav>
   </footer>
   <%= render 'layouts/messages' %>
 </body>

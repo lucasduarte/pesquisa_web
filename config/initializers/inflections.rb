@@ -11,7 +11,7 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.irregular 'produto', 'produtos'
+  inflect.irregular 'Produto', 'produtos'
   inflect.irregular 'categoria', 'categorias'
   inflect.irregular 'alerta', 'alertas'
   inflect.irregular 'pesquisa', 'pesquisas'

@@ -1,6 +1,5 @@
 <div class="wrapper">
   <div id="search_content" class="medium_wrapper wrapper_padding clearfix">
-    <header><h1>Pesquisar Produto</h1></header>
     <hr>
 
     <br>
@@ -10,16 +9,16 @@
       <form action="#" method="get">
         <input type="text" id="search_word" required />
         <button type="submit" value="" class="button" id="search">
-          <i class="fa fa-search"></i>        
+          <i class="fa fa-search"></i>
         </button>
-      </form>  
+      </form>
     </div>
-    
+
     <br>
     <br>
-    
+
     <hr>
-  
+
   </div>
 </div>
 <div class="wrapper">
@@ -32,7 +31,7 @@
         <h4>
           <%= link_to s.link, :target => '_blank' do%>
             <%= image_tag(s.image_link, :class => "productImg") %><%= s.search_word.capitalize %> <%= currency_format(s.price) %></a>
-          <% end %>  
+          <% end %>
         </h4>
         <p><%= s.description %></p>
       <% end %>
@@ -43,17 +42,7 @@
       <% @most_searched.each do |s| %>
         <h3><a href="#"><%= s.search_word.capitalize %></a></h3>
         <P class="date"><%= s.count %> vezes</P>
-      <% end %> 
-    </div>
-    <div class="col-3 homepage_content">
-     <!-- <h2>Maior Variação</h2>
-      <hr>
-      <h3><a href="#">Unicasts</a></h3>
-      <P class="date">Friday April 10th</P>
-      <h3><a href="#">The Mackenzie</a></h3>
-      <P class="date">Friday April 10th</P>
-      <h3><a href="#">Strive for the uncomfortable</a></h3>
-      <P class="date">Friday April 10th</P> -->
+      <% end %>
     </div>
   </div>
 </div>
@@ -63,27 +52,27 @@
     $("form").submit(function() {
         /* Remove unwanted characters, only accept alphanumeric and space */
         var keyword = $('#search_word').val().replace(/[^A-Za-z0-9 ]/g,'');
-     
+
         /* Replace multi spaces with a single space */
         keyword = keyword.replace(/\s{2,}/g,' ');
-     
+
         /* Replace space with a '-' symbol */
         keyword = keyword.replace(/\s/g, "-");
-     
+
         var cleanUrl = window.location.href + 'search/' + keyword.toLowerCase();
         window.location = cleanUrl;
-     
+
         return false;  // Prevent default button behaviour
     });
 
-     $(document).ready(function() { 
-        $('#search').click(function() { 
+     $(document).ready(function() {
+        $('#search').click(function() {
             if(document.getElementById("search_word").value != "")
             {
-              $.blockUI({ message: null }); 
-            }  
-        }); 
-    }); 
- 
-  
+              $.blockUI({ message: null });
+            }
+        });
+    });
+
+
 <% end %>

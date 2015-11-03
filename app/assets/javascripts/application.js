@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.responsive
 //= require dataTables/extras/dataTables.fixedHeader
@@ -23,7 +24,7 @@
 //= require highcharts/highcharts
 
 
-  
+
 
 toastr.options = {
                 "closeButton": true,
