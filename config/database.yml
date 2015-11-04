@@ -10,7 +10,7 @@ default: &default
   database: pesquisa_web
   pool: 5
   username: root
-  password: d452xcv5
+  password: root
   host: localhost
   port: 3306
 
@@ -20,7 +20,7 @@ development:
   database: pesquisa_web
   pool: 5
   username: root
-  password: d452xcv5
+  password: root
   host: localhost
   port: 3306
 
