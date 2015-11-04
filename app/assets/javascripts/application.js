@@ -20,6 +20,7 @@
 //= require ratyrate
 //= require toastr
 //= require_tree .
+//= require bootstrap-sprockets
 
 //= require highcharts/highcharts
 

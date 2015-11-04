@@ -1,7 +1,8 @@
 @import 'normalize';
 @import 'dataTables/jquery.dataTables';
 @import 'toastr';
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 $dark: #424652;
 $light: #9a9da4;
@@ -19,7 +20,7 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.wrapper {  
+.wrapper {
   width: 90%;
   margin: 0 auto;
 }
