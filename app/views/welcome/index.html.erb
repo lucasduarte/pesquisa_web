@@ -24,7 +24,7 @@
 <div class="wrapper">
   <div class="medium_wrapper wrapper_padding clearfix">
     <div class="col-1 about homepage_content">
-      <h2>Últimos Produtos Pesquisados</h2>
+      <h1>Últimos Produtos Pesquisados</h1>
       <hr>
       <% @last_searched.each do |s| %>
 
@@ -37,10 +37,12 @@
       <% end %>
     </div>
     <div  class="col-2 homepage_content">
-      <h2>Mais Buscados</h2>
+      <h1>Mais Buscados</h1>
       <hr>
       <% @most_searched.each do |s| %>
-        <h3><a href="#"><%= s.search_word.capitalize %></a></h3>
+        <h3><%= link_to search_path(s.search_word) do %>
+              <%= s.search_word.capitalize %>
+            <% end %>  </h3>
         <P class="date"><%= s.count %> vezes</P>
       <% end %>
     </div>
