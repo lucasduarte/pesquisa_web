@@ -6,7 +6,7 @@ load(app_env_vars) if File.exists?(app_env_vars)
 
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV["SG_USER"],
-  :password => ENV["PASSWORD"],
+  :password => ENV["SG_PASSWORD"],
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
