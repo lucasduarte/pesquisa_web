@@ -6,7 +6,7 @@
     <br>
 
     <div id="content">
-      <form action="#" method="get">
+      <form action="#" method="get" id="form2">
         <input type="text" id="search_word" required />
         <button type="submit" value="" class="button" id="search">
           <i class="fa fa-search"></i>
@@ -48,8 +48,9 @@
 </div>
 
 <% content_for :js do %>
+    $("#search_top").css("display", "none");
     /* Friendly URL rewrite */
-    $("form").submit(function() {
+    $("#form2").submit(function() {
         /* Remove unwanted characters, only accept alphanumeric and space */
         var keyword = $('#search_word').val().replace(/[^A-Za-z0-9 ]/g,'');
 
@@ -66,6 +67,7 @@
     });
 
      $(document).ready(function() {
+
         $('#search').click(function() {
             if(document.getElementById("search_word").value != "")
             {

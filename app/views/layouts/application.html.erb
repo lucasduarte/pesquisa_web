@@ -12,6 +12,16 @@
 <body>
   <header id="main_navigation" class="clearfix">
     <%= link_to "Pesquisa Web", root_path, class: "name" %>
+    <div id="search_top">
+       <form action="#" method="get" id="form">
+        <input type="text" id="search_word2" required />
+        <button type="submit" value="" class="button" id="search" style="margin-left:4px">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
+     
+
     <nav id="primary_nav_wrap">
       <ul>
         <li><a href="/">Home</a></li>
@@ -38,6 +48,34 @@
 
   <script type="text/javascript">
       <%= yield :js %>
+
+      /* Friendly URL rewrite */
+    $("#form").submit(function() {
+        /* Remove unwanted characters, only accept alphanumeric and space */
+        var keyword = $('#search_word2').val().replace(/[^A-Za-z0-9 ]/g,'');
+
+        /* Replace multi spaces with a single space */
+        keyword = keyword.replace(/\s{2,}/g,' ');
+
+        /* Replace space with a '-' symbol */
+        keyword = keyword.replace(/\s/g, "-");
+
+        var cleanUrl = 'http://' + window.location.host + '/search/' + keyword.toLowerCase();
+        window.location = cleanUrl;
+
+        return false;  // Prevent default button behaviour
+    });
+
+     $(document).ready(function() {
+
+        $('#search').click(function() {
+            if(document.getElementById("search_word").value != "")
+            {
+              $.blockUI({ message: null });
+            }
+        });
+    });
+
   </script>
 
   <footer id="main_footer">
