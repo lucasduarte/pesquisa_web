@@ -5,7 +5,7 @@ class Search < ActiveRecord::Base
   @search_word
   @found_products
 
-  def Search.load_products_links link, product_link_tag 
+  def Search.load_products_links link, product_link_tag
     agent = Mechanize.new
     page = agent.get(link)
 
@@ -33,17 +33,16 @@ class Search < ActiveRecord::Base
                                                .delete("^0-9,")
                                                .gsub(',','.')
                                                .to_d
-    product.link = product_link                                           
+    product.link = product_link
     product.image_link = page.search(site.image_tag).to_s
     product.site_id = site.id
     product.description = page.search(site.description_tag).to_s
     product.category = page.search(site.category_tag).to_s
                                                      .strip
-                                                     .split.map(&:capitalize).join(' ')  
-    if product.category == "" 
+                                                     .split.map(&:capitalize).join(' ')
+    if product.category == ""
       product.category = "N/A"
     end
-    
     product
   end
 
@@ -55,24 +54,24 @@ class Search < ActiveRecord::Base
     @found_products = Array.new
 
     sites.each do |s|
-      threads << Thread.new { 
+      threads << Thread.new {
 
         #Load link for each product
         links = Array.new
         links = load_products_links(s.link + @search_word, s.product_link_tag)
 
         pages = Array.new
-        links.each { |l| 
+        links.each { |l|
 
           product_threads << Thread.new {
-            page = load_product_page_html(l.to_s)  
+            page = load_product_page_html(l.to_s)
 
-            @found_products << parse_product_html(page, s, l.to_s)    
+            @found_products << parse_product_html(page, s, l.to_s)
           }
         }
 
         product_threads.each {|x| x.join}
-        
+
       }
     end
 
@@ -81,9 +80,10 @@ class Search < ActiveRecord::Base
     #Remove products with price less than or equals zero
     @found_products.reject! { |x| x.price <= 0.0 }
 
-    Thread.new { save_data }  
-  
+    Thread.new { save_data }
+
     @found_products.sort_by{|e| e[:price]}
+
   end
 
   def Search.save_data
@@ -95,7 +95,7 @@ class Search < ActiveRecord::Base
       Product.where("search_word = ?", @search_word)
              .update_all(:status => false)
       @found_products.each(&:save)
-    
+
       end
     }
   end

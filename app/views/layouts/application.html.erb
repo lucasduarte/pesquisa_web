@@ -11,38 +11,49 @@
 </head>
 <body>
   <header id="main_navigation" class="clearfix">
-    <%= link_to "Pesquisa Web", root_path, class: "name" %>
-    <div id="search_top">
-       <form action="#" method="get" id="form">
-        <input type="text" id="search_word2" required />
-        <button type="submit" value="" class="button" id="search" style="margin-left:4px">
-          <i class="fa fa-search"></i>
-        </button>
-      </form>
-      <%= ENV['SG_USER'] %> tt
-    </div>
-     
+    <div class="row">
+    <div class="col-md-12">
 
-    <nav id="primary_nav_wrap">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to 'Administração', rails_admin_path %></li>
+      <%= link_to "Pesquisa Web", root_path, class: "name" %>
+      <div class="col-md-6 col-lg-5 col-sm-4 hidden-sm">
+        <div id="search_top" >
+         <form action="#" method="get" id="form" class="form-horizontal">
+              <div class="form-group">
+                <div class="col-md-10 col-md-offset-2 col-lg-offset-4 col-lg-12 col-sm-offset-4 col-sm-12">
+                  <input type="text" id="search_word2" required style="border: 2px solid white"/>
+                  <button type="submit" value="" class="button" id="search" style="margin-left:4px; border: 2px solid white">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+            </div>
+         </form>
+       </div>
+      </div>
+     <div class="col-md-2 col-lg-3 col-sm-2 pull-right">
+      <nav id="primary_nav_wrap" >
+
+        <ul>
+          <li style="display:none"><a href="/">Home</a></li>
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <li><%= link_to 'Administração', rails_admin_path %></li>
+            <% end %>
+            <li>
+              <a href="#">Conta</a>
+              <ul>
+                <li><%= link_to gravatar_for(current_user, 'gravatar-small') + 'Perfil', user_profile_path %></li>
+                <li><%= link_to 'Configurações', edit_user_registration_path %></li>
+                <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete%></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
-          <li>
-            <a href="#">Conta</a>
-            <ul>
-              <li><%= link_to gravatar_for(current_user, 'gravatar-small') + 'Perfil', user_profile_path %></li>
-              <li><%= link_to 'Configurações', edit_user_registration_path %></li>
-              <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete%></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </div>
   </header>
 
   <%= yield %>

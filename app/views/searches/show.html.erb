@@ -11,25 +11,25 @@
           <div class="input-group">
             <input type="text" id="price" name="price" placeholder="R$ " onkeypress="return isNumberKey(event)" required/>
             <span style="margin-left:10px">
-              <button type="submit" class="button">
+              <button type="submit" >
                    <span class="glyphicon glyphicon-plus"></span>
               </button>
             </span>
-          </div>    
-        <% end %>  
+          </div>
+        <% end %>
       <% else %>
         <li><%= link_to "Faça login para adicionar um alerta.", new_user_session_path %></li>
       <% end %>
       <h4>Categorias</h4>
       <div id="categories"></div>
     </div>
-      
+
     <div class="col-big">
       <%= high_chart("price_history", @chart) do |c|%>
         <%= raw "options.tooltip.formatter = function() {
           return '<b>Preço</b>: R$'+ parseFloat(this.y).toFixed(2);
         }" %>
-      <% end %>  
+      <% end %>
       <table id="resultado" class="display responsive no-wrap">
         <thead>
             <tr>
@@ -51,13 +51,13 @@
               <td style="display:none"><%= r.category %></td>
               <td><%= link_to r.description.first(75) + '...', r.link, :target => '_blank' %></td>
               <td><%= currency_format(r.price) %></td>
-            </tr>  
-          <% end %>       
+            </tr>
+          <% end %>
         </tbody>
       </table>
-    </div>    
+    </div>
   </div>
-</div>  
+</div>
 
 <% content_for :js do %>
 

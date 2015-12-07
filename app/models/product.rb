@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   validates :site, presence: true
 
   def Product.price_history search_word
-    products = Product.select("min(price) price, date(created_at) created_at").group("date(created_at)").where("search_word = ? AND date(created_at) <= date(curdate())", search_word).order(:created_at => 'desc').take(7)
+    Product.select("min(price) price, date(created_at) created_at").group("date(created_at)").where("search_word = ? AND date(created_at) <= date(curdate())", search_word).order(:created_at => 'desc').take(7)
   end
 
   def Product.last_searched
